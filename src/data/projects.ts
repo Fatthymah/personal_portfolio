@@ -106,7 +106,6 @@ export const projectsData: Project[] = [
     ],
     liveUrl: "https://yaashbridals.vercel.app/",
     websiteUrl: "https://yaashbridals.vercel.app/",
-    githubUrl: "https://github.com/denetics/yaashbridals",
     images: {
       onboarding: "/images/projects/yaash-bridals/homepage.png",
       splash: "/images/projects/yaash-bridals/collections.png",
@@ -117,6 +116,32 @@ export const projectsData: Project[] = [
       screenshot1: "/images/projects/yaash-bridals/homepage.png",
       screenshot2: "/images/projects/yaash-bridals/collections.png",
       screenshot3: "/images/projects/yaash-bridals/contact-or-admin.png",
+    },
+  },
+  {
+    id: "focus-events",
+    category: "Event Management Website",
+    title: "Focus Events",
+    shortDescription:
+      "A premium multi-page website for an event-management brand, designed to present services, event experiences, portfolio work, and contact information through a polished editorial interface.",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
+    liveUrl: "https://focusevents-ruddy.vercel.app/",
+    websiteUrl: "https://focusevents-ruddy.vercel.app/",
+    images: {
+      onboarding: "/images/projects/focus-events/services-showcase.jpg",
+      splash: "/images/projects/focus-events/about-heritage.jpg",
+      login: "/images/projects/focus-events/regional-operations.jpg",
+      homepage: "/images/projects/focus-events/services-showcase.jpg",
+      collections: "/images/projects/focus-events/about-heritage.jpg",
+      contactOrAdmin: "/images/projects/focus-events/regional-operations.jpg",
+      screenshot1: "/images/projects/focus-events/services-showcase.jpg",
+      screenshot2: "/images/projects/focus-events/about-heritage.jpg",
+      screenshot3: "/images/projects/focus-events/regional-operations.jpg",
     },
   },
 ];

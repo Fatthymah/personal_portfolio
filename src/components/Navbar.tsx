@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, FileText, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 
 export default function Navbar() {
@@ -108,28 +108,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-3">
-            {portfolioData.hasResume ? (
-              <a
-                href={portfolioData.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#F5F5F5] bg-[#171717] hover:bg-[#202020] border border-[#2A2A2A] hover:border-[#A81E2E]/50 rounded-md transition-all font-heading"
-              >
-                <FileText className="w-3.5 h-3.5 text-[#A81E2E]" />
-                <span>Resume</span>
-              </a>
-            ) : (
-              <a
-                href={getHref("#contact")}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#A1A1AA] hover:text-[#F5F5F5] bg-[#171717] hover:bg-[#202020] border border-[#2A2A2A] hover:border-[#A81E2E]/50 rounded-md transition-all font-heading"
-                title="Resume available upon request"
-              >
-                <FileText className="w-3.5 h-3.5 text-[#A81E2E]" />
-                <span>Resume</span>
-              </a>
-            )}
-
+          <div className="hidden md:flex items-center">
             <a
               href={getHref("#contact")}
               className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#A81E2E] hover:bg-[#C42438] rounded-md transition-all shadow-md shadow-[#A81E2E]/20 hover:shadow-[#A81E2E]/40 font-heading"
@@ -182,15 +161,7 @@ export default function Navbar() {
             })}
           </div>
 
-          <div className="pt-3 border-t border-[#2A2A2A] flex flex-col gap-2">
-            <a
-              href={getHref("#contact")}
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#F5F5F5] bg-[#171717] border border-[#2A2A2A] rounded-md"
-            >
-              <FileText className="w-3.5 h-3.5 text-[#A81E2E]" />
-              <span>Resume</span>
-            </a>
+          <div className="pt-3 border-t border-[#2A2A2A]">
             <a
               href={getHref("#contact")}
               onClick={() => setMobileMenuOpen(false)}

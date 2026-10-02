@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, MapPin, Copy, Check, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, Copy, Check, ArrowUpRight, Phone } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { portfolioData } from "@/data/portfolio";
 
@@ -86,6 +86,42 @@ export default function ContactCTA() {
                 <span>LinkedIn</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
+            </div>
+
+            {/* Direct Phone & WhatsApp Contact Details */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-6 px-5 py-3.5 rounded-2xl bg-[#141414] border border-[#2A2A2A] max-w-md mx-auto mb-10">
+              {/* Visible Phone Number */}
+              <div className="flex items-center gap-2.5">
+                <span className="w-7 h-7 rounded-lg bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center text-[#A81E2E]">
+                  <Phone className="w-3.5 h-3.5" />
+                </span>
+                <span className="text-sm font-semibold tracking-wide text-[#F5F5F5] font-sans">
+                  +91 99461 96918
+                </span>
+              </div>
+
+              {/* Direct Actions: Call & WhatsApp */}
+              <div className="flex items-center gap-2">
+                <a
+                  href="tel:+919946196918"
+                  aria-label="Call Fidha Fathima at +91 99461 96918"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-[#F5F5F5] bg-[#1A1A1A] hover:bg-[#222222] border border-[#2A2A2A] hover:border-[#A81E2E]/50 rounded-lg transition-all font-heading"
+                >
+                  <Phone className="w-3 h-3 text-[#A81E2E]" />
+                  <span>Call</span>
+                </a>
+
+                <a
+                  href="https://wa.me/919946196918"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat with Fidha Fathima on WhatsApp"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-emerald-400 bg-[#1A1A1A] hover:bg-[#222222] border border-[#2A2A2A] hover:border-emerald-500/40 rounded-lg transition-all font-heading"
+                >
+                  <span>WhatsApp</span>
+                  <ArrowUpRight className="w-3 h-3 text-emerald-400" />
+                </a>
+              </div>
             </div>
 
             {/* Location & Quick Info Bar */}

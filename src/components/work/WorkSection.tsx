@@ -2,12 +2,14 @@ import React from "react";
 import FocusForgePanel from "./FocusForgePanel";
 import JournalApplicationPanel from "./JournalApplicationPanel";
 import YaashBridalsPanel from "./YaashBridalsPanel";
+import FocusEventsPanel from "./FocusEventsPanel";
 import { projectsData } from "@/data/projects";
 
 export default function WorkSection() {
   const focusForgeProject = projectsData[0];
   const journalAppProject = projectsData[1];
   const yaashBridalsProject = projectsData[2];
+  const focusEventsProject = projectsData[3];
 
   return (
     <section
@@ -19,6 +21,7 @@ export default function WorkSection() {
         <FocusForgePanel project={focusForgeProject} />
         <JournalApplicationPanel project={journalAppProject} />
         <YaashBridalsPanel project={yaashBridalsProject} />
+        <FocusEventsPanel project={focusEventsProject} />
       </div>
     </section>
   );

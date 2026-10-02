@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
-import { GithubIcon } from "@/components/Icons";
 import { Project } from "@/data/projects";
 
 interface YaashBridalsPanelProps {
@@ -63,7 +62,7 @@ export default function YaashBridalsPanel({ project }: YaashBridalsPanelProps) {
               ))}
             </div>
 
-            {/* Action Buttons: Visit Website & View on GitHub */}
+            {/* Action Button: Visit Website */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               {project.liveUrl && (
                 <a
@@ -75,20 +74,6 @@ export default function YaashBridalsPanel({ project }: YaashBridalsPanelProps) {
                 >
                   <span>Visit Website</span>
                   <ExternalLink className="w-3.5 h-3.5 text-[#C5A880] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
-              )}
-
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View Yaash Bridals source code on GitHub"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-heading text-xs font-bold tracking-wider uppercase bg-[#171311] hover:bg-[#221B17] text-[#D8CEC4] border border-[#332720] hover:border-[#8E7969]/60 transition-all duration-200 group shadow-md"
-                >
-                  <GithubIcon className="w-3.5 h-3.5 text-[#C5A880] group-hover:scale-110 transition-transform" />
-                  <span>View on GitHub</span>
-                  <ExternalLink className="w-3 h-3 text-[#A8988B] group-hover:text-[#FDFBF7] transition-colors" />
                 </a>
               )}
             </div>
