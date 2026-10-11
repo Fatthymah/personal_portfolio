@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { motion, useReducedMotion } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 
@@ -10,6 +11,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const pathname = usePathname();
+  const shouldReduceMotion = useReducedMotion();
 
   const isAboutPage = pathname === "/about";
 
@@ -94,14 +96,25 @@ export default function Navbar() {
                 <a
                   key={item.label}
                   href={href}
-                  className={`text-sm transition-all relative py-1 ${
+                  className={`text-sm transition-colors relative py-1 ${
                     active
-                      ? "text-white font-bold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#A81E2E]"
-                      : "text-[#A1A1AA] font-medium hover:text-[#F5F5F5] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#A81E2E] hover:after:w-full after:transition-all after:duration-200"
+                      ? "text-white font-bold"
+                      : "text-[#A1A1AA] font-medium hover:text-[#F5F5F5]"
                   }`}
                   aria-current={active ? "page" : undefined}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {active && (
+                    <motion.span
+                      layoutId="navbar-active-indicator"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#A81E2E] rounded-full motion-reduce:transition-none"
+                      transition={
+                        shouldReduceMotion
+                          ? { duration: 0 }
+                          : { type: "tween", duration: 0.25, ease: "easeInOut" }
+                      }
+                    />
+                  )}
                 </a>
               );
             })}

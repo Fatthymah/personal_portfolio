@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { ArrowRight, Mail, FileText } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
 
@@ -124,17 +124,6 @@ export default function Hero() {
               >
                 <Mail className="w-4 h-4 text-[#A81E2E]" />
                 <span>{hero.secondaryCtaText}</span>
-              </a>
-
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-4 py-3.5 text-sm font-semibold text-[#A1A1AA] hover:text-[#F5F5F5] transition-colors"
-                title="Resume preview"
-              >
-                <FileText className="w-4 h-4 text-[#A1A1AA]" />
-                <span className="underline underline-offset-4 decoration-[#2A2A2A] hover:decoration-[#A81E2E]">
-                  {hero.resumeCtaText}
-                </span>
               </a>
             </motion.div>
 

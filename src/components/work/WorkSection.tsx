@@ -1,4 +1,5 @@
 import React from "react";
+import MotionSection from "../MotionSection";
 import FocusForgePanel from "./FocusForgePanel";
 import JournalApplicationPanel from "./JournalApplicationPanel";
 import YaashBridalsPanel from "./YaashBridalsPanel";
@@ -18,10 +19,18 @@ export default function WorkSection() {
       className="py-16 sm:py-20 md:py-24 bg-[#080808] relative scroll-mt-20 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 md:space-y-20">
-        <FocusForgePanel project={focusForgeProject} />
-        <JournalApplicationPanel project={journalAppProject} />
-        <YaashBridalsPanel project={yaashBridalsProject} />
-        <FocusEventsPanel project={focusEventsProject} />
+        <MotionSection>
+          <FocusForgePanel project={focusForgeProject} />
+        </MotionSection>
+        <MotionSection>
+          <JournalApplicationPanel project={journalAppProject} />
+        </MotionSection>
+        <MotionSection>
+          <YaashBridalsPanel project={yaashBridalsProject} />
+        </MotionSection>
+        <MotionSection>
+          <FocusEventsPanel project={focusEventsProject} />
+        </MotionSection>
       </div>
     </section>
   );

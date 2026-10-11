@@ -1,10 +1,49 @@
+"use client";
+
 import React from "react";
-import { Layout, Smartphone, Server, Wrench } from "lucide-react";
+import {
+  Layout,
+  Smartphone,
+  Server,
+  Wrench,
+  Globe,
+  Layers,
+  Network,
+} from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { aboutData } from "@/data/about";
 import MotionSection from "../MotionSection";
 
+const capabilities = [
+  {
+    title: "Responsive Web Interfaces",
+    description:
+      "Modern, mobile-friendly websites and web applications that adapt smoothly across screen sizes.",
+    icon: Globe,
+  },
+  {
+    title: "Frontend Component Systems",
+    description:
+      "Reusable React and Next.js interfaces with organized structure and consistent visual patterns.",
+    icon: Layers,
+  },
+  {
+    title: "Flutter Mobile Experiences",
+    description:
+      "Clean mobile screens and practical user flows for Android-focused applications.",
+    icon: Smartphone,
+  },
+  {
+    title: "API and Service Integration",
+    description:
+      "Connecting interfaces with REST APIs, Supabase services, authentication flows, and structured application data.",
+    icon: Network,
+  },
+];
+
 export default function SkillsGrid() {
   const { skills } = aboutData;
+  const shouldReduceMotion = useReducedMotion();
 
   const getGroupIcon = (name: string) => {
     switch (name) {
@@ -64,7 +103,7 @@ export default function SkillsGrid() {
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="text-xs font-medium px-2.5 py-1 rounded-md bg-[#1C1C1C] text-[#E4E4E7] border border-[#2E2E2E] group-hover:border-[#3A3A3A] transition-colors"
+                      className="text-xs font-medium px-2.5 py-1 rounded-md bg-[#1C1C1C] text-[#E4E4E7] border border-[#2E2E2E] [@media(hover:hover)]:hover:border-[#A81E2E]/60 [@media(hover:hover)]:hover:-translate-y-0.5 transition-all duration-200 motion-reduce:transform-none motion-reduce:transition-none cursor-default"
                     >
                       {skill}
                     </span>
@@ -73,6 +112,60 @@ export default function SkillsGrid() {
               </div>
             </MotionSection>
           ))}
+        </div>
+
+        {/* Practical Development Capabilities */}
+        <div className="mt-16 md:mt-20 pt-16 border-t border-[#2A2A2A]/60">
+          <MotionSection className="text-center max-w-2xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#A81E2E]"></span>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D63248] font-heading">
+                WHAT I BUILD
+              </span>
+            </div>
+
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#F5F5F5] tracking-tight font-heading">
+              Practical Development Capabilities
+            </h3>
+            <p className="text-sm sm:text-base text-[#A1A1AA] mt-3 leading-relaxed">
+              I turn ideas into responsive web experiences and mobile interfaces with a focus
+              on clear user flows, reusable components, and polished interactions.
+            </p>
+          </MotionSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+            {capabilities.map((cap, idx) => {
+              const Icon = cap.icon;
+              return (
+                <MotionSection key={cap.title} delay={idx * 0.08}>
+                  <div className="p-5 sm:p-6 rounded-xl bg-[#141414] border border-[#2A2A2A] hover:border-[#A81E2E]/40 transition-all duration-300 flex items-start gap-4 group shadow-lg hover:shadow-[#A81E2E]/5 h-full">
+                    <div className="w-10 h-10 rounded-lg bg-[#1F1416] border border-[#A81E2E]/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:scale-105 transition-transform">
+                      <Icon className="w-5 h-5 text-[#A81E2E] group-hover:text-[#D63248] transition-colors" />
+                    </div>
+                    <div>
+                      <h4 className="text-base sm:text-lg font-bold text-[#F5F5F5] font-heading group-hover:text-white transition-colors">
+                        {cap.title}
+                      </h4>
+                      <p className="text-sm text-[#A1A1AA] mt-1.5 leading-relaxed">
+                        {cap.description}
+                      </p>
+                      <motion.div
+                        className="h-[2px] w-10 bg-[#A81E2E] rounded-full origin-left mt-3.5"
+                        initial={shouldReduceMotion ? { scaleX: 1 } : { scaleX: 0 }}
+                        whileInView={{ scaleX: 1 }}
+                        viewport={{ once: true }}
+                        transition={
+                          shouldReduceMotion
+                            ? { duration: 0 }
+                            : { duration: 0.4, ease: "easeOut" }
+                        }
+                      />
+                    </div>
+                  </div>
+                </MotionSection>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

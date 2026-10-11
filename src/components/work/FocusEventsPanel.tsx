@@ -15,15 +15,15 @@ export default function FocusEventsPanel({ project }: FocusEventsPanelProps) {
   return (
     <article
       aria-label={`${project.title} - ${project.category}`}
-      className="relative rounded-3xl bg-[#0B0E0D]/95 border border-[#1A2520] shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden"
+      className="relative rounded-3xl bg-[#0F0F0F]/95 border border-[#262626] shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden"
     >
-      {/* Editorial Ambient Glow (Restrained Emerald / Warm Champagne) */}
+      {/* Subtle Ambient Crimson Glow */}
       <div
-        className="pointer-events-none absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#2E7D52]/8 blur-3xl"
+        className="pointer-events-none absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#A81E2E]/6 blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-[#C5A880]/6 blur-3xl"
+        className="pointer-events-none absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-[#A81E2E]/4 blur-3xl"
         aria-hidden="true"
       />
 
@@ -37,10 +37,10 @@ export default function FocusEventsPanel({ project }: FocusEventsPanelProps) {
             
             {/* Category & Title */}
             <div>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#4E9F6E] font-heading mb-1.5">
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#A1A1AA] font-heading mb-1.5">
                 {project.category}
               </p>
-              <h3 className="text-2xl sm:text-3xl xl:text-4xl font-extrabold text-[#F7F6F2] tracking-tight font-heading">
+              <h3 className="text-2xl sm:text-3xl xl:text-4xl font-extrabold text-[#F5F5F5] tracking-tight font-heading">
                 {project.title}
               </h3>
             </div>
@@ -55,7 +55,7 @@ export default function FocusEventsPanel({ project }: FocusEventsPanelProps) {
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#141B17] border border-[#23312A] text-[#D1E7DD] tracking-wide"
+                  className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#171717] border border-[#2A2A2A] text-[#E4E4E7] tracking-wide"
                 >
                   {tech}
                 </span>
@@ -70,10 +70,10 @@ export default function FocusEventsPanel({ project }: FocusEventsPanelProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit the Focus Events website"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-heading text-xs font-bold tracking-wider uppercase bg-[#18231D] hover:bg-[#22332A] text-[#F7F6F2] border border-[#2D4236] hover:border-[#4E9F6E]/70 transition-all duration-200 group shadow-md"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-heading text-xs font-bold tracking-wider uppercase bg-[#171717] hover:bg-[#202020] text-[#F5F5F5] border border-[#2A2A2A] hover:border-[#A81E2E]/60 transition-all duration-200 group shadow-md"
                 >
                   <span>Visit Website</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#4E9F6E] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <ExternalLink className="w-3.5 h-3.5 text-[#A81E2E] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
               )}
             </div>
@@ -86,37 +86,37 @@ export default function FocusEventsPanel({ project }: FocusEventsPanelProps) {
           <div className="min-[720px]:col-span-6 xl:col-span-7 flex flex-col justify-center w-full">
             
             {/* Main Visual: Services & Experiences Showcase */}
-            <div className="relative w-full aspect-[1024/470] rounded-xl overflow-hidden border border-[#23312A] bg-[#0E1311] shadow-lg mb-3 group">
+            <div className="relative w-full aspect-[1024/470] rounded-xl overflow-hidden border border-[#262626] bg-[#141414] shadow-lg mb-3 group [@media(hover:hover)]:hover:border-[#A81E2E]/40 [@media(hover:hover)]:hover:shadow-[0_0_25px_rgba(168,30,46,0.12)] transition-all duration-300 motion-reduce:transition-none">
               <Image
                 src={mainImg}
                 alt="Focus Events Services page showcasing luxury event categories and experiences"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
-                className="object-cover group-hover:scale-[1.01] transition-transform duration-300"
+                className="object-cover [@media(hover:hover)]:group-hover:scale-[1.02] transition-transform duration-300 motion-reduce:transform-none motion-reduce:transition-none"
               />
             </div>
 
             {/* Supporting Visuals: 2 Side-by-Side Screenshots */}
             <div className="grid grid-cols-2 gap-3 w-full">
               {/* Supporting Screenshot 1: Heritage & Experience */}
-              <div className="relative w-full aspect-[1024/470] rounded-lg overflow-hidden border border-[#1E2923] bg-[#0E1311] shadow-md group">
+              <div className="relative w-full aspect-[1024/470] rounded-lg overflow-hidden border border-[#262626] bg-[#141414] shadow-md group [@media(hover:hover)]:hover:border-[#A81E2E]/40 [@media(hover:hover)]:hover:shadow-[0_0_20px_rgba(168,30,46,0.12)] transition-all duration-300 motion-reduce:transition-none">
                 <Image
                   src={heritageImg}
                   alt="Focus Events About page showcasing legacy and luxury wedding venue setups"
                   fill
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"
-                  className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                  className="object-cover [@media(hover:hover)]:group-hover:scale-[1.02] transition-transform duration-300 motion-reduce:transform-none motion-reduce:transition-none"
                 />
               </div>
 
               {/* Supporting Screenshot 2: Nationwide Regional Operations */}
-              <div className="relative w-full aspect-[1024/470] rounded-lg overflow-hidden border border-[#1E2923] bg-[#0E1311] shadow-md group">
+              <div className="relative w-full aspect-[1024/470] rounded-lg overflow-hidden border border-[#262626] bg-[#141414] shadow-md group [@media(hover:hover)]:hover:border-[#A81E2E]/40 [@media(hover:hover)]:hover:shadow-[0_0_20px_rgba(168,30,46,0.12)] transition-all duration-300 motion-reduce:transition-none">
                 <Image
                   src={operationsImg}
                   alt="Focus Events nationwide operational hubs across Riyadh, Jeddah, AlUla, and Eastern Province"
                   fill
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"
-                  className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                  className="object-cover [@media(hover:hover)]:group-hover:scale-[1.02] transition-transform duration-300 motion-reduce:transform-none motion-reduce:transition-none"
                 />
               </div>
             </div>
